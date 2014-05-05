@@ -1,0 +1,4 @@
+name: Chris Loy
+markdown: redcarpet
+pygments: true
+exclude: ['README.md', 's3_website.yml']
