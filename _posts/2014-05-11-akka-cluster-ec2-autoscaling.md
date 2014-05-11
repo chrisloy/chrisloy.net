@@ -307,7 +307,7 @@ Note that if you start two or more instances at the same time then you run the r
 
 What next?
 ---
-What we have built here is a very simple proof-of-concept app for setting up a cluster in EC2. While it may feel artificially simple, in fact we have essentially completed all the plumbing for any distributed system running in this environment. Our _BroadcastActor_ is explicitly aware of each node running in the cluster, but any actor is capable of communicating directly with any other actor in the cluster, given the _Member_ instances we have gathered.
+What we have built here is a very simple proof-of-concept app for setting up a cluster in EC2. While it may feel artificially simple, in fact we have essentially completed all the plumbing needed for any distributed system running in this environment. Our _BroadcastActor_ is explicitly aware of each node running in the cluster, but any actor is capable of communicating directly with any other actor in the cluster, given the _Member_ instances we have gathered.
 
 We can share that data around our actors, and generalise our _pathOf_ method to allow communication with any actor:
 
@@ -317,7 +317,7 @@ def pathOf(member: Member, targetActor: String) = {
 }
 ```
 
-From this we could implement any kind of distributed communication we imagine: from queue-based [CRDTs][crdts], gossip protocols, distributed caches and more. The only limits are your imagination and the how much money you're willing to throw Amazon's way.
+From this we could implement any kind of distributed communication we imagine: from queue-based [CRDTs][crdts], gossip protocols, distributed caches and more. The only limits are your imagination (and how much money you're willing to throw Amazon's way).
 
 [github]: https://github.com/chrisloy/akka-ec2
 [akka]: http://doc.akka.io/docs/akka/snapshot/java/cluster-usage.html
