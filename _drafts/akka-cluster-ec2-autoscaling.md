@@ -49,12 +49,12 @@ In practice this means that there must exist one or more known good nodes runnin
 
 For a new node joining the cluster, on the assumption that all nodes are using the same port, we need to know two things:
 
-- the IP address other nodes will use when referring to use
+- the IP address other nodes will use when referring to us
 - the IP address of some or all of the nodes already running in the cluster
 
-We will work on the assumption that the private IP addresses of each cluster are to be used, which should be sufficient within one region. The setup for a multi-region cluster would introduce a considerable amount of additional complexity.
+We will work on the assumption that the private IP addresses of each cluster node are to be used, which should be sufficient within one region. The setup for a multi-region cluster would introduce a considerable amount of additional complexity.
 
-To gather these IP addresses we will use the [AWS Java SDK][aws-sdk], specifically the [EC2][ec2] and [AutoScaling][autoscaling] client classes. Initialisation of these varies depending on the AWS region your application is running in; in this case I'm using _EU West 1_ in Ireland:
+To gather these IP addresses we will use the [AWS Java SDK][aws-sdk], specifically the [EC2][ec2] and [AutoScaling][autoscaling] client classes. Initialisation of these varies depending on the AWS region your application is running in; in this case I'm using instances in Ireland:
 
 ```scala
 val credentials = new InstanceProfileCredentialsProvider
@@ -112,11 +112,10 @@ def instanceFromId(id: String): Instance = {
 }
 ```
 
-With the above, we now have everything we need to define methods for find both our IP address and those of all our sibling instances:
+With the above, we now have everything we need to define methods for finding both our IP address and those of all our sibling instances:
 
 ```scala
-def currentIp = instanceFromId(instanceId).getPrivateIpAddress
-
+def currentIp: String = instanceFromId(instanceId).getPrivateIpAddress
 def siblingIps: List[String] =
   groupInstanceIds(groupName(instanceId)) map instanceFromId collect {
     case instance if isRunning(instance) => instance.getPrivateIpAddress
@@ -136,7 +135,7 @@ With our list of IPs in hand, we are now ready to start configuring our Akka clu
 
 Akka configuration
 ---
-In __src/main/resources__, we create a basic configuration file for Akka. We'll override some of these values in our startup code, but we can use the suggested template from the Akka docs to get us going:
+In __src/main/resources__, we create a basic __application.conf__ configuration file for Akka. We'll override some of these values in our startup code, but we can use the suggested template from the Akka docs to get us going:
 
 ```python
 akka {
@@ -168,9 +167,9 @@ Using these, we can construct a basic Akka configuration:
 ```scala
 val overrideConfig =
   ConfigFactory.empty()
-  .withValue("akka.remote.netty.tcp.hostname", ConfigValueFactory.fromAnyRef(currentIp))
-  .withValue("akka.remote.netty.tcp.port", ConfigValueFactory.fromAnyRef("2551"))
-  .withValue("akka.cluster.seed-nodes", ConfigValueFactory.fromIterable(seeds))
+    .withValue("akka.remote.netty.tcp.hostname", ConfigValueFactory.fromAnyRef(currentIp))
+    .withValue("akka.remote.netty.tcp.port", ConfigValueFactory.fromAnyRef("2551"))
+    .withValue("akka.cluster.seed-nodes", ConfigValueFactory.fromIterable(seeds))
 ```
 
 And finally create our ActorSystem:
@@ -206,7 +205,6 @@ To do something useful with this data, we need to maintain a set of the current 
 
 ```scala
 private var members = Set.empty[Member]
-
 def receive = {
   case MemberUp(member) =>
     members += member
@@ -303,9 +301,23 @@ Ensure in your security group settings that port 2551 is open for both ingress a
 java -jar akka-ec2.jar
 ```
 
-The node should look for other instances running in the same autoscaling group, and use them to join the cluster. If it is the first instance to start up, then it will form a new cluster.
+The application will then look for other instances running in the same autoscaling group, and contact them in order to join the cluster. If it is the first instance to start up, then it will form a new cluster.
 
 Note that if you start two or more instances at the same time then you run the risk of splitting the cluster.
+
+What next?
+---
+What we have built here is a very simple proof-of-concept app for setting up a cluster in EC2. While it may feel artificially simple, in fact we have essentially completed all the plumbing for any distributed system running in this environment. Our _BroadcastActor_ is explicitly aware of each node running in the cluster, but any actor is capable of communicating directly with any other actor in the cluster, given the _Member_ instances we have gathered.
+
+We can share that data around our actors, and generalise our _pathOf_ method to allow communication with any actor:
+
+```scala
+def pathOf(member: Member, targetActor: String) = {
+  context.actorSelection(RootActorPath(member.address) / "user" / targetActor )
+}
+```
+
+From this we could implement any kind of distributed communication we imagine: from queue-based [CRDTs][crdts], gossip protocols, distributed caches and more. The only limits are your imagination and the how much money you're willing to throw Amazon's way.
 
 [github]: https://github.com/chrisloy/akka-ec2
 [akka]: http://doc.akka.io/docs/akka/snapshot/java/cluster-usage.html
@@ -316,3 +328,4 @@ Note that if you start two or more instances at the same time then you run the r
 [ec2]: http://docs.aws.amazon.com/AWSJavaSDK/latest/javadoc/com/amazonaws/services/ec2/AmazonEC2Client.html
 [autoscaling]: http://docs.aws.amazon.com/AWSJavaSDK/latest/javadoc/com/amazonaws/services/autoscaling/AmazonAutoScalingClient.html
 [glossary-i]: http://docs.aws.amazon.com/general/latest/gr/glos-chap.html#I
+[crdts]: http://basho.com/tag/crdts/
