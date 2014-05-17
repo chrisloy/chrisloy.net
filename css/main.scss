@@ -73,6 +73,16 @@ a:visited { color: #a0a; }
   line-height: 1.5em;
 }
 
+@media screen and (max-width: 750px) {
+  .site {
+    width: 95%;
+  }
+  .highlight pre {
+    white-space: pre;
+    overflow: auto;
+  }
+}
+
 .header a {
   font-weight: bold;
   text-decoration: none;
