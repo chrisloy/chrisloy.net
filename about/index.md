@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Chris Loy
+title: Chris Loy | About
 ---
 
 About Me
