@@ -81,6 +81,10 @@ a:visited { color: #a0a; }
     white-space: pre;
     overflow: auto;
   }
+  .posts span {
+    color: #F00;
+    display: none;
+  }
 }
 
 .header a {
