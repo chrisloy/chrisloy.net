@@ -4,3 +4,5 @@ highlighter: pygments
 url: http://chrisloy.net
 description: Personal blog of Chris Loy, London-based software engineer
 exclude: ['README.md', 's3_website.yml']
+redcarpet:
+  extensions: ["tables"]
