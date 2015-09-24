@@ -69,7 +69,7 @@ The second of two non-fiction books by Orwell that I read this year, it is very 
 
 Snow Country — Yasunari Kawabata
 ----
-A stark and lyrical tale of doomed romance, _Snow Country_ was the breakthrough novel for Nobel Prize-winning Japanese author Kawabata. Understated and melancholy, the prose is sparse and the story ambiguous, yes it is completely captivating. A masterpiece.
+A stark and lyrical tale of doomed romance, _Snow Country_ was the breakthrough novel for Nobel Prize-winning Japanese author Kawabata. Understated and melancholy, the prose is sparse and the story ambiguous, yet it is completely captivating. A masterpiece.
 
 This Perfect Day — Ira Levin
 ----
