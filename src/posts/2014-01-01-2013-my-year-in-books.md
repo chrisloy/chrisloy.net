@@ -1,9 +1,5 @@
----
-layout:     post
-title:      "2013: My year in books"
-subheading: "The year that I discovered that the best way to be well read is to read books."
-date:       2014-01-01
----
+2013: My year in books
+===
 
 At the start of 2013, I joined the website Goodreads and began using it to track my reading habits. I had estimated that in 2012 I completed less than ten books; despairing at such a low figure I resolved to greatly up that count in 2013. I set a target of 40, revised it up to 52 after a couple of months, and ended up finishing 45 books in total. Here’s what I thought of them.
 

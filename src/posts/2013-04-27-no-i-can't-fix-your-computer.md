@@ -1,8 +1,5 @@
----
-layout: post
-title:  "No, I can't fix your computer"
-date:   2013-04-27
----
+No, I can't fix your computer
+===
 
 I am a software engineer. This means that I design and write computer programs to solve problems like displaying text on a web page, moving a piece of machinery around, or predicting whether the stock market will go up or down. It does not mean that I am capable of understanding why you get that little yellow warning each time you log into Windows, how to uninstall McAfee Antivirus software, or what all that text that you scroll past before clicking “I Agree” when installing a new videogame means. Nor does it mean that I understand what all the different ports on the back of your television do, or why your iPod will not work properly after you have dropped it in the toilet.
 

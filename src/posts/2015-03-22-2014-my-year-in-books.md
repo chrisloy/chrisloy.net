@@ -1,8 +1,5 @@
----
-layout:     post
-title:      "2014: My year in books"
-subheading: "The year in which I read slightly more books than in the previous year."
----
+2014: My year in books
+===
 
 Following on from [last year's total of 45 books read](/2014/01/01/2013-my-year-in-books.html), I set myself a target of 52 books to read in 2014. In the end I finished 47, which varied in length from 15 to 1500 pages long. I set out, as always, to read as wide a range of different books as possible, and feel I did quite well on most fronts. There is my usual bias towards fiction, but otherwise I had a fairly good spread of authors by era and nationality. However, in assembling this list I realised with a sense of dismay that I had only read 3 books by women this year, one of which was little more than a long poem. A terrible ratio by any standards and a clear goal for rectification in 2015.
 

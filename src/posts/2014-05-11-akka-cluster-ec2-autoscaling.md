@@ -1,7 +1,5 @@
----
-layout: post
-title:  "Running an Akka cluster in an EC2 Autoscaling Group"
----
+Running an Akka cluster in an EC2 Autoscaling Group
+===
 
 I recently found myself attempting to set up an Akka cluster in a EC2 auto-scaling group. I was surprised to find that there is little in the way of instructional literature available online, and thought it may be useful to document the process I took. After a few false starts and stumbling blocks, I ended up with a resizable cluster running in EC2, capable of handling stack updates and resizes using CloudFormation.
 

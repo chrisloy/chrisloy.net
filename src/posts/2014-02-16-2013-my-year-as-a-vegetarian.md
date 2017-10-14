@@ -1,9 +1,5 @@
----
-layout: post
-title:  "2013: My year as a vegetarian"
-subheading: "The year in which I ate an awful lot of cheese but not much dead animal."
-date:   2014-02-16
----
+2013: My year as a vegetarian
+===
 
 It began as a New Year’s resolution: two months as a vegetarian, following which I would attempt to maintain a strict vegetarian diet for at least five days each week. In the end I decided to stick it out and try to last a full twelve months as a vegetarian, having never in my life lasted for more than a few days without eating meat (or fish). This is that story.
 
@@ -19,7 +15,7 @@ Setting aside the (at this point completely unquestionable) belief that eating m
 
 First impressions
 ---
-My first impression of going vegetarian may surprise you: I found it easy. As in, 
+My first impression of going vegetarian may surprise you: I found it easy. As in,
 incredibly easy. I just stopped buying meat and fish, and that was that. My life pretty much continued as before, except instead of eating things that had meat in them, I was eating things that didn’t have meat in them.
 
 Now, I should be clear that I had an unfair advantage. I live in London, a large and cosmopolitan city, so firstly my local supermarkets catered well for a vegetarian diet. In fact I live in an area of the city with a particularly ethnically diverse population, so I found it easy get hold of a wide range of vegetables, cheeses and meat substitutes that might be harder to find elsewhere. Further than this, when eating out I found that most places I went tended to have two or three veggie-friendly items on their menu, from the mundane (pesto pasta) to the downright bizarre (brie, cranberry and mushroom Wellington?). The most difficult places to get decent vegetarian food seemed to be Chinese restaurants, but that is in large part because I do not consider tofu to be decent food (it’s more like a food sponge, essentially lowering the overally ‘foodiness’ of a dish). But even if I did end up somewhere lacking proper catering for a vegetarian diet, it was always easy to go somewhere else.

@@ -1,8 +1,5 @@
----
-layout: post
-title:  "Building a simple JSON library"
-subtitle: "Part 1: Model, rendering and lookup"
----
+Building a simple JSON library
+===
 
 There are already [many][play-json] [good][rapture-json] [libraries][spray-json] [for][json4s] [handling][argonaut-json] [JSON][jackson-scala] in Scala. To which I add my own: [Simple JSON][github].
 
@@ -18,15 +15,13 @@ Data types
 ---
 JSON has a limited number of data types. In order to keep things simple, we want to translate these directly to existing types in the Scala library. For each mapping we will declare a class which handles parsing, rendering and searching. The parent type of these will be ```JsonValue```.
 
-| JSON             | Scala                  | Mapping        |
-| ---------------- | --------------------   | -------------- |
-| Boolean          | Boolean                | JsonBoolean    |
-| String           | String                 | JsonString     |
-| Number           | Double                 | JsonNumber     |
-| Array            | Seq[JsonValue]         | JsonArray      |
-| Object           | Map[String, JsonValue] | JsonObject     |
-| null             | null                   | JsonNull       |
-| undefined        | *                      | JsonUndefined  |
+* Boolean → JsonBoolean
+* String → JsonString
+* Number → JsonNumber
+* Array → JsonArray
+* Object → JsonObject
+* null → JsonNull
+* undefined → JsonUndefined
 
 There are a few decisions that have been made here.
 
@@ -148,7 +143,7 @@ As you can see, we're returning ```JsonUndefined``` if a requested key is absent
 json / "outer-key" / "inner-key" / "and-so-on"
 ```
 
-If any of the intervening objects do not contain the specified key, the returned value of this operation will be ```JsonUndefined```.
+If any of the intervening objects do not contain the specified key, the returned value of this operation will be `JsonUndefined`.
 
 This completes our basic JSON model. The full set of code can be seen [here][github-model].
 

@@ -1,8 +1,5 @@
----
-layout: post
-title:  "How not to write a technical blog"
-date:   2013-03-06
----
+How not to write a technical blog
+===
 
 As a software developer, my primary resource when looking for technical knowledge is the internet. Whether searching for tutorials on using an unfamiliar framework, consulting documentation for an obscure feature of a well-known language, or looking for existing design solutions to a new problem, my first instinct is to load up my preferred search engine and start punching in key search terms. In general this is a good strategy. While there is immense value in technical literature, a book is not the best place to keep reams of interface documentation. Nor, crucially, can a published author ever expect to keep pace with an early adopter using their blog to discuss a new open source library. New technology often suffers from a dearth of documentation, and the technical blogger is well placed to step in and fill the gap.
 
