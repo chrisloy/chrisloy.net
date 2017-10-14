@@ -53,7 +53,17 @@ const Home = () => (
   </div>
 )
 
-const NotFound = () => <h1>:(</h1>
+const NotFound = () => (
+  <div id="home">
+    <h1>Not Found</h1>
+    <p>
+      <i>
+        {"Life isn't about finding yourself. Life is about creating yourself."}
+      </i>
+    </p>
+    <p>- George Bernard Shaw</p>
+  </div>
+)
 
 ReactDOM.render((
   <Router history={browserHistory}>
