@@ -1,2 +1,4 @@
 _site
 s3_website.yml
+node_modules
+*.DS_Store
