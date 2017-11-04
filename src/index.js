@@ -24,15 +24,15 @@ const App = ({children}) => (
 
     <footer>
       <nav>
-        <Link to="https://github.com/chrisloy">
+        <a href="https://github.com/chrisloy">
           <i className="fa fa-github" aria-hidden="true"></i>
-        </Link>
-        <Link to="https://twitter.com/chrisloy">
+        </a>
+        <a href="https://twitter.com/chrisloy">
           <i className="fa fa-twitter" aria-hidden="true"></i>
-        </Link>
-        <Link to="https://www.linkedin.com/in/chrisloy/">
+        </a>
+        <a href="https://www.linkedin.com/in/chrisloy/">
           <i className="fa fa-linkedin" aria-hidden="true"></i>
-        </Link>
+        </a>
       </nav>
     </footer>
   </div>
