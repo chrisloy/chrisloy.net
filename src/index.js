@@ -14,8 +14,8 @@ const Nav = () => (
 const App = ({children}) => (
   <div>
     <header>
-      <h1><Link to="/">Chris Loy</Link></h1>
       <Nav/>
+      <h1><Link to="/">Chris Loy</Link></h1>
     </header>
 
     <main>
@@ -45,7 +45,7 @@ const Home = () => (
       <Link to={post.url} key={post.url} className="block">
         <div>
           <h1>{post.title}</h1>
-          <h2 className="date">{post.date}</h2>
+          <h3 className="date">{post.date}</h3>
         </div>
       </Link>
     ))

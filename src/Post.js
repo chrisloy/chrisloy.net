@@ -43,7 +43,9 @@ export const Post = (props) => {
 
   return (
     <div className="blog">
-      <h2 style={{float: "right", marginTop: 0}}>{fileNameToDate(fileName)}</h2>
+      <h3 style={{float: "right", marginTop: 0, marginLeft: "2em"}} className="date">
+        {fileNameToDate(fileName)}
+      </h3>
       <Markdown source={fileNameToContent(fileName)}/>
     </div>
   );
