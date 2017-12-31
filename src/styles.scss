@@ -175,6 +175,13 @@ ul {
   }
 }
 
+hr {
+  margin: 4em 0 1em 0;
+  background: $lightBorder;
+  height: 2px;
+  border: 0;
+}
+
 // Style
 .date {
   color: $secondary;

@@ -82,3 +82,7 @@ Ultimately, if you are completely non-technical, then even some of the simplifie
 Good luck! This can be a daunting task. But the rewards of finding the right match for your company will be enormous - so spend the time to get it right.
 
 > **TL;DR:** My contact details are below ;-)
+
+---
+
+Enjoy this article? Let me know [on Twitter](https://twitter.com/chrisloy), or join the conversation [on Hacker News](https://news.ycombinator.com/item?id=15771413).
